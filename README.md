@@ -8,3 +8,7 @@ Try
 go run compare.go
 ```
 for comparing the run-time of **Original Lattigo Bootstrapping** versus **Out-sourced Bootstrapping based on Grafting**. 
+
+The **Out-sourced Bootstrapping based on Grafting** is an extension of the linear transformation in the word-sized moduli chain in the submission paper. 
+Currently, it does not include the last modulus switching (which reported 0.3% of the total bootstrapping time in HEaaN implementation). 
+A complete version will be uploaded in few days. 
