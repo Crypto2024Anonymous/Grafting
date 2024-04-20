@@ -110,3 +110,11 @@ func GetPrecisionStats(params Parameters, encoder *Encoder, decryptor *rlwe.Decr
 func VerifyTestVectors(params Parameters, encoder *Encoder, decryptor *rlwe.Decryptor, valuesWant, valuesHave interface{}, log2MinPrec int, logprec float64, printPrecisionStats bool, t *testing.T) {
 	ckks.VerifyTestVectors(params.Parameters, &encoder.Encoder, decryptor, valuesWant, valuesHave, log2MinPrec, logprec, printPrecisionStats, t)
 }
+
+type ModulusSwitcher struct {
+	ckks.ModulusSwitcher
+}
+
+func NewModulusSwitcher(params1, params2 Parameters) *ModulusSwitcher {
+	return &ModulusSwitcher{ModulusSwitcher: *ckks.NewModulusSwitcher(params1.Parameters, params2.Parameters)}
+}
